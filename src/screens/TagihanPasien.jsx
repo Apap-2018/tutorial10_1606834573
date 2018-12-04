@@ -13,7 +13,7 @@ export class TagihanPasien extends React.Component {
 		super(props)
 		this.state = {
 			loading: true,
-			tagihan: {},
+			pasien: {},
 		}
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
 
@@ -64,14 +64,13 @@ export class TagihanPasien extends React.Component {
 			if(response.status === 200) {
 				this.setState({
 					loading: false,
-					pasien: response.result
 				})
-				alert(`Sukses add tagihan pasien dengan ID ${this.state.pasien.id}`)
+				alert(`Sukses add tagihan pasien dengan nama ${this.state.pasien.nama}`)
 			} else {
 				this.setState({
 					loading: false
 				})
-				alert(`Gagal add tagihan pasien dengan ID ${this.state.pasien.id}`)
+				alert(`Gagal add tagihan pasien dengan nama ${this.state.pasien.nama}`)
 			}
 		})
 
